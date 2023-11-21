@@ -30,10 +30,20 @@
                 <input type="text" placeholder="E-Mail-Adresse oder Benutzername" required>
                 <h4>Passwort</h3>
                 <input type="password" placeholder="Passwort" required>
-                
-                <button type="submit">Anmelden</button>
+                <div id="switch-container">
+                    <div id="switch" onclick="animateSwitch()">
+                    <div id="circle"></div>
+                    </div>
+                    <h3>Benutzername speichern</h3>
+                </div>
+                <button class="Submit" type="submit">Anmelden</button>
             </form>
+            <div class="Passwort_V">
+                <a href="#"> Passwort Vergessen?</a>
+            </div>
+            <hr style="background-color: #4a4949; height: 2px; margin: 50px 0;"><br>
         </div>
+        
     </main>
     <script src="https://kit.fontawesome.com/c01712aef1.js" crossorigin="anonymous"></script>
     <script src="./JS/Login.js"></script>

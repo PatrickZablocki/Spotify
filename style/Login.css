@@ -140,14 +140,52 @@ span {
     padding-right: 350px;
 }
 /*  Hier Geht es um das Sytlen des Benutzername speichern Button */
-#saveButton {
+#switch-container {
     position: relative;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #808080; /* Graue Farbe */
-    border: none;
-    width: 20%;
-    color: #ffffff; /* Textfarbe auf Weiß ändern */
-    transition: background-color 0.3s; /* Farbübergang hinzufügen */
+    display: flex;
+    margin-left: 150px;
+}
+
+#switch {
+    width: 60px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 20px;
+    position: absolute;
+    transition: background-color 0.5s;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+#circle {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+}
+
+#switch-container h3{
+    color: var(--text-color);
+    padding-left: 70px;
+    padding-top: 3px;
+}
+
+/*  Hier ist nochmal seperat der Button für das Anmelden */
+.Submit{
+    margin-top: 30px;
+}
+
+/*  Hier Ist ein Kleiner Abnschitt für den Style für den Button Passwort vergessen  */
+.Passwort_V{
+    padding-top:30px;
+}
+
+.Passwort_V a{
+    color: var(--text-color);
+    text-decoration: underline;
+}
+.Passwort_V a:hover {
+    color: #4caf50;
 }

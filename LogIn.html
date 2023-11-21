@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Public/Favicon-Spotify.png">
+    <title>Anmelden - Spotify</title>
+    <link rel="stylesheet" href="style/Login.css">
+</head>
+<body>
+    <!--  Wir beginnen mit dem Header -->
+    <header id="header">
+        <img class="LogIn-Image" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" alt="">
+    </header>
+    <!--  Hier endet der Header hier kommt nur das Logo rein  -->
+    <!--  Ab hier geht alles los undzwar das Komplette Login -->
+    <main>
+        <div class="login-box">
+            <h2>Bei Spotify anmelden</h2>
+            <div class="social-buttons">
+                <button type="button"><i class="fab fa-facebook-f"></i>Weiter mit Google</button>
+                <button type="button"><i class="fab fa-google"></i>Weiter mit Facebook</button>
+                <button type="button"><i class="fab fa-apple"></i>Weiter mit Apple</button>
+            </div>
+            <!-- Ab Hier einen Strich -->
+            <hr style="background-color: #4a4949; height: 2px; margin: 10px 0;"><br>
+            <form>
+                <h3>E-Mail-Adresse oder Benutzername</h3>
+                <input type="text" placeholder="E-Mail-Adresse oder Benutzername" required>
+                <h3>Passwort</h3>
+                <input type="password" placeholder="Passwort" required>
+                
+                <button type="submit">Anmelden</button>
+            </form>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/c01712aef1.js" crossorigin="anonymous"></script>
+    <script src="./JS/Login.js"></script>
+</body>
+</html>

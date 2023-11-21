@@ -1,0 +1,130 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    appearance: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:grey;
+    --secondary-color:black;
+    --text-color:white;
+}
+body{
+    background: linear-gradient(to top, #000000, #292929);
+    margin: 0;
+    height: 100vh;
+}
+#header{
+background-color: var(--secondary-color);
+height: 120px;
+}
+.LogIn-Image{
+    width: 200px;
+    height: auto;
+}
+#header img {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+/*  AB hier geht es weiter mit dem Stylen des Log Ins */
+.login-box {
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: block;
+    justify-content: center;
+    width: 600px;
+    height: 750px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 70px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 3rem;
+}
+
+.login-box input {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #525151;
+    border-radius: 4px;
+    background: #292929;
+}
+.login-box h3{
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    padding-left: 115px;
+    padding-bottom: 12px;
+    font-size: 1rem;
+}
+
+.login-box button {
+    width: 60%;
+    padding: 10px;
+    background-color: #4caf50;
+    color:black;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    
+}
+
+.login-box button:hover {
+    background-color: #45a049;
+}
+
+.login-box .social-buttons {
+    margin-top: 20px;
+}
+
+.login-box .social-buttons button {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--secondary-color); /* Facebook*/
+    color: #ffffff;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.login-box .social-buttons button:nth-child(2) {
+    background-color: var(--secondary-color); /* Google */
+}
+
+.login-box .social-buttons button:nth-child(3) {
+    background-color: var(--secondary-color); /* Apple */
+}
+
+.login-box .social-buttons button:hover {
+    opacity: 0.8;
+}
+/*  Hier Geht es um das Sytlen des Benutzername speichern Button */
+#saveButton {
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #808080; /* Graue Farbe */
+    border: none;
+    width: 20%;
+    color: #ffffff; /* Textfarbe auf Weiß ändern */
+    transition: background-color 0.3s; /* Farbübergang hinzufügen */
+}

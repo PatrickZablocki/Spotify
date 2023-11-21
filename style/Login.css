@@ -20,10 +20,10 @@ body{
 }
 #header{
 background-color: var(--secondary-color);
-height: 120px;
+height: 100px;
 }
 .LogIn-Image{
-    width: 200px;
+    width: 150px;
     height: auto;
 }
 #header img {
@@ -32,7 +32,7 @@ height: 120px;
     padding-top: 30px;
     padding-left: 20px;
 }
-/*  AB hier geht es weiter mit dem Stylen des Log Ins */
+/*  Ab hier geht es weiter mit dem Stylen des Log Ins */
 .login-box {
     background-color: black;
     padding: 20px;
@@ -41,7 +41,7 @@ height: 120px;
     width: 300px;
     display: block;
     justify-content: center;
-    width: 600px;
+    width: 750px;
     height: 750px;
     position: absolute;
     top: 50%;
@@ -66,11 +66,11 @@ height: 120px;
     border-radius: 4px;
     background: #292929;
 }
-.login-box h3{
+.login-box h4{
     color: var(--text-color);
     display: flex;
     align-items: center;
-    padding-left: 115px;
+    padding-left: 150px;
     padding-bottom: 12px;
     font-size: 1rem;
 }
@@ -91,30 +91,53 @@ height: 120px;
 }
 
 .login-box .social-buttons {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+    margin: auto;
 }
 
-.login-box .social-buttons button {
+.login-box .social-buttons a {
     width: 60%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: var(--secondary-color); /* Facebook*/
-    color: #ffffff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     border: 1px solid white;
     border-radius: 20px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    text-align: center; 
+    align-items: center;
+    text-decoration: none;
 }
 
-.login-box .social-buttons button:nth-child(2) {
+.login-box .social-buttons a:nth-child(2) {
     background-color: var(--secondary-color); /* Google */
 }
 
-.login-box .social-buttons button:nth-child(3) {
+.login-box .social-buttons a:nth-child(3) {
     background-color: var(--secondary-color); /* Apple */
 }
 
-.login-box .social-buttons button:hover {
+.login-box .social-buttons a:hover {
     opacity: 0.8;
+}
+/*  Hier bearbeite ich die Icons Seperat */
+span {
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    align-items: center;
+    text-align: center;
+    padding-top: 1px;
+    padding-right: 350px;
 }
 /*  Hier Geht es um das Sytlen des Benutzername speichern Button */
 #saveButton {

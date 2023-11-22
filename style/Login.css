@@ -8,6 +8,8 @@
     text-decoration: none;
     box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One:ital@0;1&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bricolage+Grotesque&family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&family=Edu+SA+Beginner:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Jura:wght@300;400;500;600;700&family=Maven+Pro:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@200;300;400;500;600;700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Signika:wght@300;400;500;600;700&display=swap');
+
 :root{
     --primary-color:grey;
     --secondary-color:black;
@@ -16,7 +18,23 @@
 body{
     background: linear-gradient(to top, #000000, #292929);
     margin: 0;
-    height: 110vh;
+    height: 140vh;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-family: 'Bitter', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Edu SA Beginner', cursive;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Jura', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Philosopher', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Signika', sans-serif;
 }
 #header{
 background-color: var(--secondary-color);
@@ -42,7 +60,7 @@ height: 100px;
     display: block;
     justify-content: center;
     width: 750px;
-    height: 810px;
+    height: 760px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -55,6 +73,8 @@ height: 100px;
     margin-bottom: 20px;
     color: var(--text-color);
     font-size: 3rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .login-box input {
@@ -62,9 +82,16 @@ height: 100px;
     padding: 10px;
     margin-bottom: 15px;
     box-sizing: border-box;
-    border: 1px solid #525151;
+    border: 1px solid #727171;
     border-radius: 4px;
-    background: #292929;
+    background: #141414;
+    padding-top: 20px;
+}
+.Email:hover {
+    border: 1px solid #fff;
+}
+.password:hover {
+    border: 1px solid #fff;
 }
 .login-box h4{
     color: var(--text-color);
@@ -103,12 +130,12 @@ height: 100px;
 }
 
 .login-box .social-buttons a {
-    width: 60%;
+    width: 50%;
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--secondary-color);
     color: var(--text-color);
-    border: 1px solid white;
+    border: 2px solid rgb(119, 119, 119);
     border-radius: 20px;
     font-weight: bold;
     display: flex;
@@ -137,18 +164,19 @@ span {
     align-items: center;
     text-align: center;
     padding-top: 1px;
-    padding-right: 350px;
+    padding-right: 280px;
 }
 /*  Hier Geht es um das Sytlen des Benutzername speichern Button */
 #switch-container {
     position: relative;
     display: flex;
     margin-left: 150px;
+    padding-top: 20px;
 }
 
 #switch {
-    width: 60px;
-    height: 30px;
+    width: 40px;
+    height: 20px;
     background-color: #ddd;
     border-radius: 20px;
     position: absolute;
@@ -159,8 +187,8 @@ span {
     box-sizing: border-box;
 }
 #circle {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-color: gray;
     border-radius: 50%;
     transition: transform 0.5s ease-in-out;
@@ -169,7 +197,7 @@ span {
 #switch-container h3{
     color: var(--text-color);
     padding-left: 70px;
-    padding-top: 3px;
+    padding-bottom:20px;
 }
 
 /*  Hier ist nochmal seperat der Button für das Anmelden */

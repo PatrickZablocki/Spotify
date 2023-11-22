@@ -77,7 +77,7 @@ height: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
+/* Das sind die Styles für die Input Felder zum anmelden */
 .login-box input {
     width: 60%;
     padding: 10px;
@@ -87,6 +87,7 @@ height: 100px;
     border-radius: 4px;
     background: #141414;
     padding-top: 20px;
+    color: white;
 }
 .Email:hover {
     border: 1px solid #fff;

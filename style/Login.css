@@ -18,7 +18,7 @@
 body{
     background: linear-gradient(to top, #000000, #292929);
     margin: 0;
-    height: 140vh;
+    height: 170vh;
     font-family: 'Alumni Sans Collegiate One', sans-serif;
     font-family: 'Bitter', serif;
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -60,13 +60,14 @@ height: 100px;
     display: block;
     justify-content: center;
     width: 750px;
-    height: 760px;
+    height: 1000px;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-top: 70px;
     transform: translate(-50%, -50%);
     text-align: center;
+    margin-top:190px;
 }
 
 .login-box h2 {
@@ -177,7 +178,7 @@ span {
 #switch {
     width: 40px;
     height: 20px;
-    background-color: #ddd;
+    background-color: #6c6a6a;
     border-radius: 20px;
     position: absolute;
     transition: background-color 0.5s;
@@ -189,7 +190,7 @@ span {
 #circle {
     width: 15px;
     height: 15px;
-    background-color: gray;
+    background-color: black;
     border-radius: 50%;
     transition: transform 0.5s ease-in-out;
 }
@@ -198,6 +199,9 @@ span {
     color: var(--text-color);
     padding-left: 70px;
     padding-bottom:20px;
+}
+#switch.active {
+    border: 3px solid white;
 }
 
 /*  Hier ist nochmal seperat der Button für das Anmelden */

@@ -11,39 +11,82 @@ function toggleSwitch() {
     switchElement.style.backgroundColor = switchElement.style.backgroundColor === 'green' ? '#6c6a6a' : 'green';
     switchElement.classList.toggle('active');
 }
-// Ab hier muss ich die Anmeldungen Speicher etc.
-
-function registerUser(username, password) {
+// Ab hier muss ich die Regestrierung funktion schreiben.
+function register(username, password) {
     
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const fs = require('fs');
+    const jsonDateipfad = 'benutzerdaten.json';
+    let benutzerdaten = [];
 
-    const existingUser = users.find(user => user.username === username);
-    if (existingUser) {
+    try {
+        const daten = fs.readFileSync(jsonDateipfad, 'utf-8');
+        benutzerdaten = JSON.parse(daten);
+    } catch (error) {
+        console.error('Fehler beim Lesen der Benutzerdaten:', error);
+    }
+
+    
+    const vorhandenerBenutzer = benutzerdaten.find(benutzer => benutzer.username === username);
+    if (vorhandenerBenutzer) {
         console.log('Benutzer existiert bereits.');
-        return false;
+        return;
     }
 
-    const newUser = { username, password };
-    users.push(newUser);
-
+    // Hier können wir neue Nutzer Hinzufügen
+    benutzerdaten.push({ username, password });
+    const username1 = 'Patrick';
+    const username2 = 'Durmus';
+    const username3 = 'Timo';
+    const username4 = 'Andreas';
     
-    localStorage.setItem('users', JSON.stringify(users));
-
-    console.log('Benutzer erfolgreich registriert.');
-    return true;
+    try {
+        fs.writeFileSync(jsonDateipfad, JSON.stringify(benutzerdaten));
+        console.log('Benutzer erfolgreich registriert.');
+    } catch (error) {
+        console.error('Fehler beim Schreiben der Benutzerdaten:', error);
+    }
 }
-function loginUser(username, password) {
-    
-    const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    const authenticatedUser = users.find(user => user.username === username && user.password === password);
-    if (authenticatedUser) {
-        console.log('Anmeldung erfolgreich.');
-        return true;
+//  Hier ist die Funktion mit der Anmeldung
+
+function login(username, password) {
+    // Hier wird auf die Benutzerdaten zugegriffen
+    const fs = require('fs');
+    const jsonDateipfad = '.json';
+    let benutzerdaten = [];
+
+    try {
+        const daten = fs.readFileSync(jsonDateipfad, 'utf-8');
+        benutzerdaten = JSON.parse(daten);
+    } catch (error) {
+        console.error('Fehler beim Lesen der Benutzerdaten:', error);
+    }
+
+    // Hier Überprüfen wir Benutzername und passwort zur korrektheit
+    const angemeldeterBenutzer = benutzerdaten.find(benutzer => benutzer.username === username && benutzer.password === password);
+
+    if (angemeldeterBenutzer) {
+        console.log('Anmeldung erfolgreich. Willkommen, ' + username + '!');
+        
     } else {
-        console.log('Falscher Benutzername oder Passwort.');
-        return false;
+        console.log('Falscher Benutzername oder falsches Passwort.');
     }
 }
-registerUser('Benutzer1', 'Passwort123');
-loginUser('Benutzer1', 'Passwort123');
+
+//  Abspeichern der Daten
+
+const fs = require('fs');
+
+// Beispiel-der Benutzerdaten
+const benutzerdaten = [
+    { "username": "Patrick", "password": "Passwort123" },
+    { "username": "Benutzer2", "password": "GeheimesPasswort" }
+];
+
+
+const jsonDateipfad = 'benutzerdaten.json';
+
+// Hier speichern wir die Benutzerdaten in die JSON-Datei ein.
+fs.writeFileSync(jsonDateipfad, JSON.stringify(benutzerdaten));
+
+console.log(`Benutzerdaten wurden in ${jsonDateipfad} gespeichert.`);

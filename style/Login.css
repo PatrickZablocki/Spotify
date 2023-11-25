@@ -149,7 +149,7 @@ height: 100px;
 
 .login-box .social-buttons a:nth-child(2) {
     background-color: var(--secondary-color);
-    margin-bottom: 600px; /* Google */
+    /* Google */
 }
 
 .login-box .social-buttons a:nth-child(3) {

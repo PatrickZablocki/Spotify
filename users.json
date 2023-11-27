@@ -1,0 +1,17 @@
+{
+    "users": [
+    {
+        "email": "patrick.zablocki@dci-student.org",
+        "password": "passwort1"
+    },
+    {
+        "email": "benutzer2@example.com",
+        "password": "passwort2"
+    },
+    {
+        "email": "benutzer3@example.com",
+        "password": "passwort3"
+    }
+    
+    ]
+}

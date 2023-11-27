@@ -110,7 +110,7 @@ body {
   list-style: none;
 }
 .topbar .navbar ul li {
-  display: inline-block;
+  display:inline;
   margin: 0px 8px;
   width: 70px;
 }

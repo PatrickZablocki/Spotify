@@ -1,27 +1,118 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Spotify search</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="style/search.css">
+  <meta charset="UTF-8">
+  <title>Spotify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style/search.css">
 </head>
 <body>
 
-<div class="search-container">
+<div class="sidebar">
+  <div class="logo">
+    <a href="#">
+      <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Logo" />
+    </a>
+  </div>
 
-<span class="search-icon">
-<i class="fas fa-search" style="color: #f5f5f5;"></i>
-</span>
+  <div class="navigation">
+    <ul>
+      <li>
+        <a href="#">
+          <span class="fa fa-home"></span>
+          <span>Start</span>
+        </a>
+      </li>
 
-<input id="searchInput" type="text" placeholder="Was möchtest du hören?">
+      <li>
+        <a href="#">
+          <span class="fa fa-search"></span>
+          <span>Suchen</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <span class="fa fas fa-book"></span>
+          <span>Bibliothek</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <span class="fa fas fa-plus-square"></span>
+          <span>Create Playlist</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <span class="fa fas fa-heart"></span>
+          <span>Liked Songs</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="policies">
+    <ul>
+      <li>
+        <a href="#">Cookies</a>
+      </li>
+      <li>
+        <a href="#">Privacy</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
-<div class="results-container">
+<div class="main-container">
+  <div class="topbar">
+    <div class="prev-next-buttons">
+      <button type="button" class="fa fas fa-chevron-left"></button>
+      <button type="button" class="fa fas fa-chevron-right"></button>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Was möchtest du hören?">
+    </div>
+
+    <div class="navbar">
+      <ul>
+        <li>
+          <a href="#">Spotify Premium</a>
+        </li>
+
+        <li>
+          <a href="#">Support</a>
+        </li>
+
+        <li>
+          <a href="#">Herunterladen</a>
+        </li>
+
+        <li class="divider">|</li>
+        <li>
+          <a href="./Regestrieren.html">Registrieren</a>
+        </li>
+      </ul>
+      <button><a href="./LogIn.html">Anmelden</a></button>
+    </div>
+  </div>
+
+  <div class="preview">
+    <div class="text">
+      <h4>Spotify-Vorschau</h4>
+      <p>Registriere dich, um unbegrenzt Songs und Podcasts mit gelegentlichen Werbeunterbrechungen zu hören. Ganz ohne Kreditkarte</p>
+    </div>
+    <div class="button">
+      <button><a href="./Regestrieren.html">Kostenlos Registrieren</a></button>
+    </div>
+  </div>
 </div>
 
+<script src="https://kit.fontawesome.com/23cecef777.js" crossorigin="anonymous"></script>
 <script src="JS/search.js"></script>
-
 </body>
 </html>

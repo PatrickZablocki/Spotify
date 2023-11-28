@@ -134,4 +134,4 @@ document.addEventListener('DOMContentLoaded', function () {
       card.style.display = 'block';
     });
   }
-});
+}); 

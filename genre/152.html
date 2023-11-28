@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style/styles.css" />
-    <link rel="stylesheet" href="./style/genres.css" />
+    <link rel="stylesheet" href="../style/styles.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -13,6 +13,83 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      #codes {
+        padding: 10px;
+      }
+      .track-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .track-table th,
+      .track-table td {
+        padding: 10px;
+        border-bottom: 1px solid #333;
+        text-align: left;
+        color: #fff;
+      }
+
+      .track-table th {
+        border-bottom: 1px solid #333;
+      }
+
+      .track-table tbody tr:hover {
+        background-color: #555;
+      }
+      .list {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin: 0;
+      }
+      .list img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        margin-right: 10px;
+      }
+      .dance-img {
+        object-fit: cover;
+        width: 100%;
+        height: 500px;
+        background-image: url(https://e-cdns-images.dzcdn.net/images/misc/b36ca681666d617edd0dcb5ab389a6ac/1000x1000-000000-80-0-0.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .dance-img p {
+        position: relative;
+        top: 340px;
+        left: 25px;
+        color: #fff;
+      }
+      .dance-img h2 {
+        font-size: 65px;
+        position: relative;
+        top: 340px;
+        left: 25px;
+        color: #fff;
+      }
+      .top-play {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-top: 25px;
+      }
+      .top-play p {
+        font-size: 24px;
+        color: #fff;
+        padding-left: 30px;
+      }
+      .faheart {
+        font-size: 30px;
+        color: #fff;
+
+        padding-left: 30px;
+      }
+    </style>
   </head>
   <body>
     <div class="sidebar">
@@ -108,59 +185,17 @@
       </div>
       <div class="main-seite">
         <div class="spotify-playlists">
-          <h2>Spotify Playlists</h2>
-          <div class="list">
-            <div id="playlistTracks"></div>
+          <div class="dance-img">
+            <p>Playlist</p>
+            <h2>Rock</h2>
           </div>
+          <div class="top-play">
+            <i class="fa-solid fa-play faPlay"></i>
+            <i class="fa-regular fa-heart faheart"></i>
+            <p>...</p>
+          </div>
+          <div id="codes"></div>
         </div>
-
-        <div class="footer">
-          <div class="links">
-            <div>
-              <p>Unternehmen</p>
-              <ul>
-                <li>Impressum</li>
-                <li>Info</li>
-                <li>Jobs</li>
-                <li>For the Record</li>
-              </ul>
-            </div>
-            <div>
-              <p>Communitys</p>
-              <ul>
-                <li>Impressum</li>
-                <li>Services für Künstler*innen</li>
-                <li>Developers</li>
-                <li>Werbung</li>
-                <li>Investor*innen</li>
-                <li>Lieferant*innen</li>
-              </ul>
-            </div>
-            <div>
-              <p>Nützliche Links</p>
-              <ul>
-                <li>Support</li>
-                <li>Kostenlose mobile App</li>
-                <li>Verträge hier kündigen</li>
-              </ul>
-            </div>
-          </div>
-          <div class="icons-media">
-            <ul>
-              <li>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <hr class="hr-footer" />
-        <p class="copyright">© 2023 Spotify AB</p>
       </div>
       <div class="preview">
         <div class="text">
@@ -182,6 +217,6 @@
       src="https://kit.fontawesome.com/23cecef777.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./JS/genres.js"></script>
+    <script src="../JS/playlist.js"></script>
   </body>
 </html>

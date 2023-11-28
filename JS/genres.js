@@ -1,5 +1,3 @@
-// tracks.js
-
 async function getGenreDetails(genreId) {
     const url = `https://deezerdevs-deezer.p.rapidapi.com/genre/${genreId}`;
     const options = {
@@ -22,38 +20,44 @@ async function getGenreDetails(genreId) {
         trackItem.classList.add('track-item');
 
         trackItem.innerHTML = `<div class="liste">
-        <img src="${genrePicture}" alt="${genreName}" />
-        <p>${genreName}</p></div>`;
+            <img src="${genrePicture}" alt="${genreName}" />
+            <p>${genreName}</p>
+        </div>`;
         playlistTracksElement.appendChild(trackItem);
 
         trackItem.addEventListener("mouseover", () => {
-           
             const playIcon = document.createElement("i");
-            playIcon.className = "fa-solid fa-play";
+            playIcon.className = "fa-solid fa-play faPlay";
             playIcon.style.position = "relative";
             playIcon.style.top = "-120px";
             playIcon.style.left = "50px";
-            
+
             trackItem.style.position = "relative";
 
-            trackItem.appendChild(playIcon);    
+            trackItem.appendChild(playIcon);
         });
+
         trackItem.addEventListener("mouseout", () => {
             const playIcon = trackItem.querySelector(".fa-play");
             if (playIcon) {
-                trackItem.removeChild(playIcon); 
+                trackItem.removeChild(playIcon);
                 trackItem.style.position = "";
             }
         });
-        trackItem.addEventListener("click", () =>{
-            const tracksListUrl = "http://127.0.0.1:5500/js/tracks.html";
-            window.location.href = tracksListUrl;
 
+        trackItem.addEventListener("click", () => {
+            redirectToGenrePage(genreId);
         });
     } catch (error) {
         console.error(error);
     }
 }
+
+function redirectToGenrePage(genreId) {
+    const genrePageUrl = `http://127.0.0.1:5501/genre/${genreId}.html`;
+    window.location.href = genrePageUrl;
+}
+
 async function playlist() {
     const ids = [132, 116, 152, 113];
 
@@ -61,4 +65,5 @@ async function playlist() {
         await getGenreDetails(id);
     }
 }
+
 playlist();

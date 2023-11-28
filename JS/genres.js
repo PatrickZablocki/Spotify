@@ -7,36 +7,29 @@ async function getGenreDetails(genreId) {
             'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
         }
     };
-
     try {
         const response = await fetch(url, options);
         const result = await response.json();
         console.log(result);
         const genreName = result.name;
         const genrePicture = result.picture_xl;
-
         const playlistTracksElement = document.getElementById('playlistTracks');
         const trackItem = document.createElement('div');
         trackItem.classList.add('track-item');
-
         trackItem.innerHTML = `<div class="liste">
             <img src="${genrePicture}" alt="${genreName}" />
             <p>${genreName}</p>
         </div>`;
         playlistTracksElement.appendChild(trackItem);
-
         trackItem.addEventListener("mouseover", () => {
             const playIcon = document.createElement("i");
             playIcon.className = "fa-solid fa-play faPlay";
             playIcon.style.position = "relative";
             playIcon.style.top = "-120px";
             playIcon.style.left = "50px";
-
             trackItem.style.position = "relative";
-
             trackItem.appendChild(playIcon);
         });
-
         trackItem.addEventListener("mouseout", () => {
             const playIcon = trackItem.querySelector(".fa-play");
             if (playIcon) {
@@ -44,7 +37,6 @@ async function getGenreDetails(genreId) {
                 trackItem.style.position = "";
             }
         });
-
         trackItem.addEventListener("click", () => {
             redirectToGenrePage(genreId);
         });
@@ -52,18 +44,14 @@ async function getGenreDetails(genreId) {
         console.error(error);
     }
 }
-
 function redirectToGenrePage(genreId) {
     const genrePageUrl = `http://127.0.0.1:5501/genre/${genreId}.html`;
     window.location.href = genrePageUrl;
 }
-
 async function playlist() {
     const ids = [132, 116, 152, 113];
-
     for (const id of ids) {
         await getGenreDetails(id);
     }
 }
-
 playlist();

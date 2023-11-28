@@ -1,7 +1,7 @@
-const songs = ["cruel summer", "barbie girl", "nonsense", "gimme more", "say so"];
+const songs = ["nie weil ich muss", "wiedaa", "die zona","verdient","7 sitzer"];
 
 async function loadSongs(songs) {
-  const playlistTracksElement = document.getElementById('codes');
+  const playlistTracksElement = document.getElementById('playlist-tracks');
   const table = document.createElement('table');
   table.classList.add('track-table');
 
@@ -83,24 +83,3 @@ function convertDuration(durationInSeconds) {
 
 loadSongs(songs);
 
-
-
-
-  // const availableGenres = [
-  //   {
-  //   genreName: "Pop",
-  //   songs: ["cruel summer","barbie girl","nonsense", "gimme more", "say so"]
-  //   },
-  //   {
-  //   genreName: "Rock",
-  //   songs: ["steh auf","tage wie diese","still","dicke titten","ich will nicht nach berlin"]
-  //   },
-  //   {
-  //   genreName: "Hip-Hop",
-  //   songs: ["nie weil ich muss", "wiedaa", "die zona","verdient","7 sitzer" ]
-  //   },
-  //   {
-  //     genreName: "Dance/Electronic",
-  //     songs: ["automotivo bibi fogosa", "metamorphosis", "murder in my mind","baixo","9mm" ]
-  //     },
-  //   ];

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/Public/Favicon-Spotify.png" />
-    <title>Spotify-Webplayer:Musik für alle</title>
-    <link rel="stylesheet" href="./style/styles.css" />
-    <link rel="stylesheet" href="./style/genres.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/styles.css" />
+    <link rel="stylesheet" href="../style/playlist.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -18,7 +18,7 @@
   <body>
     <div class="sidebar">
       <div class="logo">
-        <a href="./index.html">
+        <a href="../index.html">
           <img
             src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
             alt="Logo"
@@ -29,21 +29,21 @@
       <div class="navigation">
         <ul>
           <li>
-            <a href="./index.html">
+            <a href="../index.html">
               <span class="fa fa-home"></span>
               <span>Start</span>
             </a>
           </li>
 
           <li>
-            <a href="./search.html">
+            <a href="../search.html">
               <span class="fa fa-search"></span>
               <span>Suchen</span>
             </a>
           </li>
 
           <li>
-            <a href="./bibliothek.html">
+            <a href="../bibliothek.html">
               <span class="fa fas fa-book"></span>
               <span>Bibliothek</span>
             </a>
@@ -61,7 +61,7 @@
           </li>
 
           <li>
-            <a href="./favoritenlist.html">
+            <a href="../favoritenlist.html">
               <span class="fa fas fa-heart"></span>
               <span>Liked Songs</span>
             </a>
@@ -101,67 +101,25 @@
             </li>
             <li class="divider">|</li>
             <li>
-              <a href="./Regestrieren.html">Regestrieren</a>
+              <a href="../Regestrieren.html">Regestrieren</a>
             </li>
           </ul>
-          <button><a href="./LogIn.html">Anmelden</a></button>
+          <button><a href="../LogIn.html">Anmelden</a></button>
         </div>
       </div>
       <div class="main-seite">
         <div class="spotify-playlists">
-          <h2>Spotify Playlists</h2>
-          <div class="list">
-            <div id="playlistTracks"></div>
+          <div class="pop-img">
+            <p>Playlist</p>
+            <h2>Pop</h2>
           </div>
+          <div class="top-play">
+            <i class="fa-solid fa-play faPlay"></i>
+            <i class="fa-regular fa-heart faheart"></i>
+            <p>...</p>
+          </div>
+          <div id="playlist-tracks"></div>
         </div>
-
-        <div class="footer">
-          <div class="links">
-            <div>
-              <p>Unternehmen</p>
-              <ul>
-                <li>Impressum</li>
-                <li>Info</li>
-                <li>Jobs</li>
-                <li>For the Record</li>
-              </ul>
-            </div>
-            <div>
-              <p>Communitys</p>
-              <ul>
-                <li>Impressum</li>
-                <li>Services für Künstler*innen</li>
-                <li>Developers</li>
-                <li>Werbung</li>
-                <li>Investor*innen</li>
-                <li>Lieferant*innen</li>
-              </ul>
-            </div>
-            <div>
-              <p>Nützliche Links</p>
-              <ul>
-                <li>Support</li>
-                <li>Kostenlose mobile App</li>
-                <li>Verträge hier kündigen</li>
-              </ul>
-            </div>
-          </div>
-          <div class="icons-media">
-            <ul>
-              <li>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <hr class="hr-footer" />
-        <p class="copyright">© 2023 Spotify AB</p>
       </div>
       <div class="preview">
         <div class="text">
@@ -183,6 +141,6 @@
       src="https://kit.fontawesome.com/23cecef777.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./JS/genres.js"></script>
+    <script src="../JS/playlist/pop.js"></script>
   </body>
 </html>

@@ -110,7 +110,7 @@ body {
   list-style: none;
 }
 .topbar .navbar ul li {
-  display:inline;
+  display: inline;
   margin: 0px 8px;
   width: 70px;
 }
@@ -154,14 +154,15 @@ body {
 .topbar .navbar button:focus {
   background-color: #f2f2f2;
 }
-.spotify-playlists {
+ /* .spotify-playlists {
   padding: 20px 40px;
-}
+}  */
 .spotify-playlists h2 {
   color: #ffffff;
   font-size: 22px;
   margin-bottom: 20px;
 }
+/*
 .spotify-playlists .list {
   display: flex;
   gap: 20px;
@@ -218,7 +219,99 @@ body {
 .spotify-playlists hr {
   margin: 70px 0px 0px;
   border-color: #636363;
+} */
+
+/* Genres Datei beginnen */
+#playlistTracks {  
+  /* min-height: 100vh; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px;
+  cursor: pointer;
+  margin-bottom: 150px;
 }
+.liste {
+  background-color: #181818;
+  padding: 15px;
+  border-radius: 6px;
+}
+.liste:hover {
+  background-color: #222222;
+}
+.track-item {
+  width: 200px;
+  height: 240px;
+  background-color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.track-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.track-item p {
+  padding: 10px;
+  text-align: left;
+}
+.faPlay {
+  font-size: 18px;
+  color: #000000;
+  border-radius: 50%;
+  padding: 18px;
+  background-color: #28a745;
+}
+
+/* genress datei end */
+/* Footer beginn */
+.footer{
+display: flex;
+justify-content: space-between;
+margin-right: 50px;
+color: #7d7d7d;
+}
+.footer .links {
+  display: flex;
+  gap: 80px;
+}
+.footer .links p {
+  margin-bottom: 20px;
+  color: white;
+}
+.footer .links li {
+  padding-bottom: 10px;
+}
+.footer .links li:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.hr-footer {
+  margin-top: 50px;
+  border-top: 0.5px solid #2A2A2A;
+}
+.copyright {
+  color: #7d7d7d;
+  margin-top: 50px;
+}
+.icons-media ul {
+  display: flex;
+}
+.icons-media li{
+  padding-left: 20px;
+}
+.icons-media .fa-brands {
+  font-size: 24px;
+  color: white;
+}
+
+
+/* Footer end */
 
 .preview {
   position: fixed;

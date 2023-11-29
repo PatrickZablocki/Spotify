@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
             if (user) {
                 console.log('Erfolgreich eingeloggt.');
                 
-                window.location.href = 'index.html';
+                window.location.href = '/Eingeloggt.html';
             } else {
                 console.log('Ungültige Anmeldeinformationen.');
             }

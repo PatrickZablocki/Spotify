@@ -1,16 +1,20 @@
 {
     "users": [
     {
-        "email": "patrick.zablocki@dci-student.org",
+        "email": "Patrick",
         "password": "passwort1"
     },
     {
-        "email": "benutzer2@example.com",
+        "email": "Timo",
         "password": "passwort2"
     },
     {
-        "email": "benutzer3@example.com",
+        "email": "Drumus",
         "password": "passwort3"
+    },
+    {
+        "email":"Andreas",
+        "password":"passwort4"
     }
     
     ]

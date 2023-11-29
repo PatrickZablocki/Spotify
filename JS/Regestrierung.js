@@ -30,8 +30,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
             .then(response => response.json())
             .then(updatedData => {
                 console.log('Benutzer erfolgreich registriert:', updatedData);
-                
-                window.location.href = 'index.html';
+                window.location.replace = '/Eingeloggt.html';
             })
             .catch(error => console.error('Fehler beim Aktualisieren der Benutzerdaten:', error));
         }

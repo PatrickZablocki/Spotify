@@ -109,6 +109,11 @@ body {
 .topbar .navbar ul {
   list-style: none;
 }
+.topbar .navbar ul li {
+  display:inline;
+  margin: 0px 8px;
+  width: 70px;
+}
 .App__username {
   color: #fff;
   font-size: 0.9em;

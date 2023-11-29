@@ -1,106 +1,57 @@
-const songs = [];
-
-async function loadSongs(songs) {
-  const playlistTracksElement = document.getElementById('playlist-tracks');
-  const table = document.createElement('table');
-  table.classList.add('track-table');
-
-  // Table headers
-  const tableHeader = document.createElement('thead');
-  tableHeader.innerHTML = `<tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Album</th>
-        <th></th>
-        <th><i class="fa-solid fa-clock"></i></th>
-    </tr>`;
-  table.appendChild(tableHeader);
-
-  const tableBody = document.createElement('tbody');
-  table.appendChild(tableBody);
-
-  for (let index = 0; index < songs.length; index++) {
-    const song = songs[index];
-    let res = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${song}`, {
-      "method": "GET",
-      "headers": {
-        'X-RapidAPI-Key': '8ad14d0a04msh72a6b8f2bc2432ep18f95bjsnd37c5986112b',
-        'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+async function getGenreDetails(genreId) {
+  const url = `https://deezerdevs-deezer.p.rapidapi.com/genre/${genreId}`;
+  const options = {
+      method: 'GET',
+      headers: {
+          'X-RapidAPI-Key': '8ad14d0a04msh72a6b8f2bc2432ep18f95bjsnd37c5986112b',
+          'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
       }
-    });
-    let data = await res.json();
-
-    const track = data.data[0]; 
-
-    const trackTitle = track.title;
-    const trackArtist = track.artist.name;
-    const trackAlbum = track.album.title;
-    const trackImg = track.album.cover;
-    const trackDuration = convertDuration(track.duration);
-
-    const tableRow = document.createElement('tr');
-    tableRow.innerHTML = `<td class="indexNummer">${index + 1}</td>
-            <td>
-                <div class="list">
-                    <img src="${trackImg}" alt="${trackTitle}" />
-                    <div>
-                      <p>${trackTitle}</p>
-                      <p>${trackArtist}</p>
-                    </div>
-                </div>
-            </td>
-            <td>${trackAlbum}</td>
-            <td class="favIcon"></td>
-            <td>${trackDuration}</td>`;
-
-    tableRow.addEventListener("mouseover", () => {
-      tableRow.style.cursor = "pointer";
-      const favIcon = tableRow.querySelector(".favIcon");
-      favIcon.innerHTML = `<i class="fa-regular fa-heart"></i>`;
-      const indexNummer = tableRow.querySelector(".indexNummer");
-      indexNummer.innerHTML = `<i class="fa-solid fa-play"></i>`;
-    });
-
-    tableRow.addEventListener("mouseout", () => {
-      tableRow.style.backgroundColor = "";
-      const favIcon = tableRow.querySelector(".favIcon");
-      favIcon.innerHTML = "";
-      const indexNummer = tableRow.querySelector(".indexNummer");
-      indexNummer.innerHTML = `<td class="indexNummer">${index + 1}</td>`;
-    });
-
-    tableBody.appendChild(tableRow);
+  };
+  try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      console.log(result);
+      const genreName = result.name;
+      const genrePicture = result.picture_xl;
+      const playlistTracksElement = document.getElementById('playlistTracks');
+      const trackItem = document.createElement('div');
+      trackItem.classList.add('track-item');
+      trackItem.innerHTML = `<div class="liste">
+          <img src="${genrePicture}" alt="${genreName}" />
+          <p>${genreName}</p>
+      </div>`;
+      playlistTracksElement.appendChild(trackItem);
+      trackItem.addEventListener("mouseover", () => {
+          const playIcon = document.createElement("i");
+          playIcon.className = "fa-solid fa-play faPlay";
+          playIcon.style.position = "relative";
+          playIcon.style.top = "-120px";
+          playIcon.style.left = "50px";
+          trackItem.style.position = "relative";
+          trackItem.appendChild(playIcon);
+      });
+      trackItem.addEventListener("mouseout", () => {
+          const playIcon = trackItem.querySelector(".fa-play");
+          if (playIcon) {
+              trackItem.removeChild(playIcon);
+              trackItem.style.position = "";
+          }
+      });
+      trackItem.addEventListener("click", () => {
+          redirectToGenrePage(genreId);
+      });
+  } catch (error) {
+      console.error(error);
   }
-
-  playlistTracksElement.appendChild(table);
 }
-
-function convertDuration(durationInSeconds) {
-  const minutes = Math.floor(durationInSeconds / 60);
-  const seconds = durationInSeconds % 60;
-  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+function redirectToGenrePage(genreId) {
+  const genrePageUrl = `http://127.0.0.1:5501/genre/${genreId}.html`;
+  window.location.href = genrePageUrl;
 }
-
-loadSongs(songs);
-
-
-
-
-  // const availableGenres = [
-  //   {
-  //   genreName: "Pop",
-  //   songs: ["cruel summer","barbie girl","nonsense", "gimme more", "say so"]
-  //   },
-  //   {
-  //   genreName: "Rock",
-  //   songs: ["steh auf","tage wie diese","still","dicke titten","ich will nicht nach berlin"]
-  //   },
-  //   {
-  //   genreName: "Hip-Hop",
-  //   songs: ["nie weil ich muss", "wiedaa", "die zona","verdient","7 sitzer" ]
-  //   },
-  //   {
-  //     genreName: "Dance/Electronic",
-  //     songs: ["automotivo bibi fogosa", "metamorphosis", "murder in my mind","baixo","9mm" ]
-  //     },
-  //   ];
+async function playlist() {
+  const ids = [132, 116, 152, 113, 165, 85, 106, 466, 144, 129, 84, 98, 173, 169, 2, 16, 153, 75, 459, 81];
+  for (const id of ids) {
+      await getGenreDetails(id);
+  }
+}
+playlist();

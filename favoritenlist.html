@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style/styles.css" />
-    <link rel="stylesheet" href="./style/genres.css" />
+    <link rel="stylesheet" href="../style/styles.css" />
+    <link rel="stylesheet" href="../style/playlist.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -42,7 +43,7 @@
           </li>
 
           <li>
-            <a href="http://127.0.0.1:5501/bibliothek.html">
+            <a href="#">
               <span class="fa fas fa-book"></span>
               <span>Bibliothek</span>
             </a>
@@ -108,11 +109,18 @@
       </div>
       <div class="main-seite">
         <div class="spotify-playlists">
-          <h2>Bibliothek</h2>
-          <div class="list">
-            <div id="playlistTracks"></div>
+          <div class="bibliothek">
+            <p>Playlist</p>
+            <h2>Favoritenliste</h2>
           </div>
+          <div class="top-play">
+            <i class="fa-solid fa-play faPlay"></i>
+            <i class="fa-regular fa-heart faheart"></i>
+            <p>...</p>
+          </div>
+          <div id="favorites-list"></div>
         </div>
+      </div>
       <div class="preview">
         <div class="text">
           <h4>Spotify-Vorschau</h4>
@@ -133,6 +141,6 @@
       src="https://kit.fontawesome.com/23cecef777.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./JS/bibliothek.js"></script>
+    <script src="../JS/bibliothek.js"></script>
   </body>
 </html>

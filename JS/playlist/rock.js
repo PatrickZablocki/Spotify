@@ -1,3 +1,4 @@
+import keys from "../key.js";
 const songs = ["steh auf","tage wie diese","still","dicke titten","ich will nicht nach berlin"];
 
 async function loadSongs(songs) {
@@ -24,8 +25,8 @@ async function loadSongs(songs) {
     let res = await fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${song}`, {
       "method": "GET",
       "headers": {
-        'X-RapidAPI-Key': '8ad14d0a04msh72a6b8f2bc2432ep18f95bjsnd37c5986112b',
-        'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+        'X-RapidAPI-Key': keys.key,
+        'X-RapidAPI-Host': keys.host,
       }
     });
     let data = await res.json();

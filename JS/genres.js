@@ -1,10 +1,11 @@
+import keys from "./key.js";
 async function getGenreDetails(genreId) {
     const url = `https://deezerdevs-deezer.p.rapidapi.com/genre/${genreId}`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '8ad14d0a04msh72a6b8f2bc2432ep18f95bjsnd37c5986112b',
-            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+            'X-RapidAPI-Key': keys.key,
+            'X-RapidAPI-Host': keys.host,
         }
     };
     try {

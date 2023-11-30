@@ -17,10 +17,12 @@ async function getGenreDetails(genreId) {
         const playlistTracksElement = document.getElementById('playlistTracks');
         const trackItem = document.createElement('div');
         trackItem.classList.add('track-item');
-        trackItem.innerHTML = `<div class="liste">
+        trackItem.innerHTML = `
+        <div class="liste">
             <img src="${genrePicture}" alt="${genreName}" />
             <p>${genreName}</p>
-        </div>`;
+        </div>
+        `;
         playlistTracksElement.appendChild(trackItem);
         trackItem.addEventListener("mouseover", () => {
             const playIcon = document.createElement("i");

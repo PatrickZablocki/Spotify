@@ -110,11 +110,13 @@ async function getSongDetails(song) {
   const trackArtist = track.artist.name;
   const trackDuration = convertDuration(track.duration);
   const trackImg = track.album.cover;
+  const trackAlbum = track.album.title;
   return {
     title: trackTitle,
     artist: trackArtist,
     duration: trackDuration,
-    image: trackImg
+    image: trackImg,
+    album: trackAlbum
   };
 }
 loadSongs(songs);

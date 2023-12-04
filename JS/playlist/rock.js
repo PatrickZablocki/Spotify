@@ -4,16 +4,17 @@ async function loadSongs(songs) {
   const playlistTracksElement = document.getElementById('playlist-tracks');
   const table = document.createElement('table');
   table.classList.add('track-table');
-
   // Table headers
   const tableHeader = document.createElement('thead');
-  tableHeader.innerHTML = `<tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Album</th>
-        <th></th>
-        <th><i class="fa-solid fa-clock"></i></th>
-    </tr>`;
+  tableHeader.innerHTML = `
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Album</th>
+    <th></th>
+    <th><i class="fa-solid fa-clock"></i></th>
+  </tr>
+  `;
   table.appendChild(tableHeader);
 
   const tableBody = document.createElement('tbody');
@@ -31,7 +32,6 @@ async function loadSongs(songs) {
     let data = await res.json();
 
     const track = data.data[0];
-
     const trackTitle = track.title;
     const trackArtist = track.artist.name;
     const trackAlbum = track.album.title;
@@ -39,32 +39,31 @@ async function loadSongs(songs) {
     const trackDuration = convertDuration(track.duration);
 
     const tableRow = document.createElement('tr');
-    tableRow.innerHTML = `<td class="indexNummer">${index + 1}</td>
-            <td>
-                <div class="list">
-                    <img src="${trackImg}" alt="${trackTitle}" />
-                    <div>
-                      <p>${trackTitle}</p>
-                      <p>${trackArtist}</p>
-                    </div>
-                </div>
-            </td>
-            <td>${trackAlbum}</td>
-            <td class="favIcon"><i class="fa-regular fa-heart"></i></td>
-            <td>${trackDuration}</td>`;
-
+    tableRow.innerHTML = `
+    <td class="indexNummer">${index + 1}</td>
+    <td>
+      <div class="list">
+        <img src="${trackImg}" alt="${trackTitle}" />
+        <div>
+          <p>${trackTitle}</p>
+          <p>${trackArtist}</p>
+        </div>
+      </div>
+    </td>
+    <td>${trackAlbum}</td>
+    <td class="favIcon"><i class="fa-regular fa-heart"></i></td>
+    <td>${trackDuration}</td>
+    `;
     const favIcon = tableRow.querySelector(".favIcon");
 
     tableRow.addEventListener("mouseover", () => {
       tableRow.style.cursor = "pointer";
-    
       const indexNummer = tableRow.querySelector(".indexNummer");
       indexNummer.innerHTML = `<i class="fa-solid fa-play"></i>`;
     });
 
     tableRow.addEventListener("mouseout", () => {
       tableRow.style.backgroundColor = "";
-
       const indexNummer = tableRow.querySelector(".indexNummer");
       indexNummer.innerHTML = `<td class="indexNummer">${index + 1}</td>`;
     });

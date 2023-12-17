@@ -12,13 +12,15 @@ async function displayFavorites() {
     table.classList.add('track-table');
   
     const tableHeader = document.createElement('thead');
-    tableHeader.innerHTML = `<tr>
-          <th>#</th>
-          <th>Title</th>
-          <th>Album</th>
-          <th><i class="fa-solid fa-clock"></i></th>
-          <th></th>
-      </tr>`;
+    tableHeader.innerHTML = `
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Album</th>
+      <th><i class="fa-solid fa-clock"></i></th>
+      <th></th>
+    </tr>
+    `;
     table.appendChild(tableHeader);
   
     const tableBody = document.createElement('tbody');
@@ -28,13 +30,13 @@ async function displayFavorites() {
       tableRow.innerHTML = `
       <td class="indexNummer">${index + 1}</td>
       <td>
-      <div class="list">
-      <img src="${favorite.image}" alt="${favorite.title}" />
-      <div>
-      <p>${favorite.title}</p>
-      <p>${favorite.artist}</p>
-      </div>
-      </div>
+        <div class="list">
+          <img src="${favorite.image}" alt="${favorite.title}" />
+          <div>
+            <p>${favorite.title}</p>
+            <p>${favorite.artist}</p>
+          </div>
+        </div>
       </td>
       <td>${favorite.album}</td>
       <td>${favorite.duration}</td>

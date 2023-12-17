@@ -16,11 +16,14 @@ async function getGenreDetails(genreId) {
         const playlistTracksElement = document.getElementById('playlistTracks');
         const trackItem = document.createElement('div');
         trackItem.classList.add('track-item');
-        trackItem.innerHTML = `<div class="liste">
+        trackItem.innerHTML = `
+        <div class="liste">
             <img src="${genrePicture}" alt="${genreName}" />
             <p>${genreName}</p>
-        </div>`;
+        </div>
+        `;
         playlistTracksElement.appendChild(trackItem);
+
         trackItem.addEventListener("mouseover", () => {
             const playIcon = document.createElement("i");
             playIcon.className = "fa-solid fa-play faPlay";
@@ -30,6 +33,7 @@ async function getGenreDetails(genreId) {
             trackItem.style.position = "relative";
             trackItem.appendChild(playIcon);
         });
+
         trackItem.addEventListener("mouseout", () => {
             const playIcon = trackItem.querySelector(".fa-play");
             if (playIcon) {
@@ -37,6 +41,7 @@ async function getGenreDetails(genreId) {
                 trackItem.style.position = "";
             }
         });
+
         trackItem.addEventListener("click", () => {
             redirectToGenrePage(genreId);
         });
@@ -44,6 +49,7 @@ async function getGenreDetails(genreId) {
         console.error(error);
     }
 }
+
 function redirectToGenrePage(genreId) {
     const genrePageUrl = `http://127.0.0.1:5501/genre/${genreId}.html`;
     window.location.href = genrePageUrl;
